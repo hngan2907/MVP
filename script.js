@@ -1,29 +1,37 @@
+( function( $ ) {
 
-(function($) {
-  $(document).ready(function() {
-    $(".btn-1").click(function() {
-      $("#col1").toggle();
-    });
-    $(".btn-2").click(function() {
-      $("#col2").toggle();
-    });
+$( document ).ready(function() {
+$(document).ready(function(){
 
-    $(function() {
-      var menu = $('.sidebar > ul');
-      menu.find('.sub > ul').hide();
+$('.sidenav > ul > li ul').each(function(index, e){
+  var count = $(e).find('li').length;
+  var content = '<span class=\"cnt\">' + count + '</span>';
+  $(e).closest('li').children('a').append(content);
+});
+$('.sidenav ul ul li:odd').addClass('odd');
+$('.sidenav ul ul li:even').addClass('even');
+$('.sidenav > ul > li > a').click(function() {
+  $('.sidenav li').removeClass('active');
+  $(this).closest('li').addClass('active');
+  var checkElement = $(this).next();
+  if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+    $(this).closest('li').removeClass('active');
+    checkElement.slideUp('normal');
+  }
+  if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+    $('.sidenav ul ul:visible').slideUp('normal');
+    checkElement.slideDown('normal');
+  }
+  if($(this).closest('li').find('ul').children().length == 0) {
+    return true;
+  } else {
+    return false;
+  }
+});
 
-      menu.on('click', function(event) {
-        event.preventDefault();
 
+});
 
-        var targetParent = $(event.target).parent();
-        if (targetParent.hasClass('sub')) {
-          targetParent.toggleClass('active');
-          targetParent.children('ul').slideToggle(250);
-        }
-      })
-    });
-    document.getElementByclassName("drop").addEventListener("toggle", myFunction);
+});
 
-  });
-})(jQuery);
+} )( jQuery );
