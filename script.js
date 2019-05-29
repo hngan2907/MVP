@@ -1,3 +1,4 @@
+
 (function($) {
   $(document).ready(function() {
     $(".btn-1").click(function() {
@@ -5,15 +6,6 @@
     });
     $(".btn-2").click(function() {
       $("#col2").toggle();
-    });
-    $(".btn-3").click(function() {
-      $("#col3").toggle();
-    });
-    $(".btn-4").click(function() {
-      $("#col4").toggle();
-    });
-    $(".btn-5").click(function() {
-      $("#col5").toggle();
     });
 
     $(function() {
@@ -31,6 +23,7 @@
         }
       })
     });
+    document.getElementByclassName("drop").addEventListener("toggle", myFunction);
 
   });
 })(jQuery);
