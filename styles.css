@@ -443,7 +443,10 @@ i {
   transition: 0.3s;
   cursor: pointer;
 }
-
+.seemore a {
+  text-decoration: none;
+  color: white;
+}
 .seemore:hover {
   opacity: 1
 }
