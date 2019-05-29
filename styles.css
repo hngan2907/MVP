@@ -87,140 +87,89 @@ header .search-container button:hover {
   border-bottom: 2px solid #000066;
 }
 
-/*Side bar*/
-.sidebar {
+
+
+.sidenav, .sidenav ul, .sidenav li, .sidenav a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  font-weight: normal;
+  text-decoration: none;
+  line-height: 1;
+  font-family: 'Oxygen Mono', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  position: relative;
+}
+.sidenav a {
+  line-height: 1.3;
+}
+.sidenav {
   width: 20%;
   float: left;
 }
-
-.sidebar ul {
+.sidenav > ul > li > a {
+  padding-right: 40px;
+  font-size: 25px;
+  font-weight: bold;
   display: block;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  line-height: 1;
+  background:  #000066;
+  color: #ffffff;
+  border-bottom: 1px solid   #b3b3ff;
+  text-transform: uppercase;
 }
-
-.sidebar ul li {
-  position: relative;
+.sidenav > ul > li > a > span {
+  background:    #336699;
+  padding: 10px;
   display: block;
+  font-size: 13px;
+  font-weight: 300;
 }
-
-.sidebar ul li a {
-  display: block;
+.sidenav > ul > li > a:hover {
   text-decoration: none;
-  position: relative;
 }
-
-.sidebar>ul {
-  border: 1px solid #b3b3ff;
-  border-radius: 3px;
-  background: #ffffff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+.sidenav > ul > li.active {
+  border-bottom: none;
 }
-
-.sidebar>ul>li:first-child>a {
-  border-radius: 3px 3px 0 0;
+.sidenav > ul > li.active > a {
+  color: #fff;
 }
-
-.sidebar>ul>li:last-child>a {
-  border-radius: 0 0 3px 3px;
+.sidenav > ul > li.active > a span {
+  background:  #000066;
 }
-
-.sidebar>ul>li:not(:last-child) {
-  border-bottom: 1px solid #b3b3ff;
-}
-
-.sidebar>ul>li.active>a {
-  color: white;
-  background-color: #000066;
-}
-
-.sidebar>ul>li.sub>a::after {
-  content: '';
+.sidenav span.cnt {
   position: absolute;
-  display: block;
-  border: 5px solid transparent;
-  border-top-color: #888888;
+  top: 8px;
   right: 15px;
-  top: 17px;
-  transition: all .25s ease;
-  transform-origin: 0 25%;
+  padding: 0;
+  margin: 0;
+  background: none;
 }
-
-.sidebar>ul>li.sub.active>a::after {
-  transform: rotateX(180deg);
-  border-top-color: #777777;
+/* Sub menu */
+.sidenav ul {
+  margin-bottom: 50px;
 }
-
-.sidebar>ul>li:hover>a::after {
-  border-top-color: #777777;
+.sidenav ul ul {
+  display: none;
 }
-
-.sidebar>ul>li>a {
-  padding: 12px 15px;
-  background-color: #336699;
-  color: white;
-  transition: all 0.3s ease-out;
-  font-size: 12px;
-  font-family: 'Oxygen Mono', Tahoma, Arial, sans-serif;
-  text-transform: uppercase;
+.sidenav ul ul li {
+  border: 1px solid #e0e0e0;
+  border-top: 0;
 }
-
-.sidebar>ul>li>a:hover {
-  color: #d9e6f2;
-  background-color: #002b80;
-  font-weight: bold;
-}
-
-.sidebar ul ul li.active>a {
-  color: #002b80;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.sidebar ul ul li.active>a:hover {
-  color: #000066;
-  font-weight: bold;
-  transform-origin: 0 25%;
-  text-transform: uppercase;
-}
-
-.sidebar ul ul li.sub>a::after {
-  content: '';
-  position: absolute;
+.sidenav ul ul a {
+  padding: 10px;
   display: block;
-  border: 5px solid transparent;
-  border-top-color: #888888;
-  right: 15px;
-  top: 15px;
-  transition: all .25s ease;
-  transform-origin: 0 25%;
+  color:  #003366;
+  font-size: 13px;
 }
-
-.sidebar ul ul li.sub.active>a::after {
-  transform: rotateX(180deg);
-  border-top-color: #777777;
+.sidenav ul ul a:hover {
+  color:  #990000;
 }
-
-.sidebar ul ul li:hover>a::after {
-  border-top-color: #777777;
+.sidenav ul ul li.odd {
+  background:   #ecf2f9;
 }
-
-.sidebar ul ul li a {
-  padding: 10px 15px;
-  font-size: 14px;
-  background-color: #c6d9ec;
-  color: #000066;
-  font-family: 'Roboto', Helvetica, sans-serif;
-}
-
-.sidebar ul ul li a:hover {
-  font-weight: bold;
-}
-
-.sidebar ul ul ul li a {
-  padding-left: 25px;
+.sidenav ul ul li.even {
+  background: #fff;
 }
 
 /* Main content */
@@ -231,11 +180,11 @@ header .search-container button:hover {
 
 /* Some media queries for responsiveness */
 @media screen and (max-height: 450px) {
-  .sidebar {
+  .sidenav {
     padding-top: 15px;
   }
 
-  .sidebar a {
+  .sidenav a {
     font-size: 18px;
   }
 }
