@@ -321,7 +321,8 @@ i {
   font-family: 'Shadows Into Light', cursive;
   font-size: 36px;
 }
-.overimagesmall{
+
+.overimagesmall {
   position: absolute;
   top: 80px;
   left: 60px;
@@ -372,7 +373,23 @@ i {
   font-size: 15px;
 }
 
+.drop {
+  background-color: #e6e6ff;
+  margin: 20px;
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+.drop summary {
+  font-size: 18px;
+  background-color: white;
+}
+
+.drop p {
+  margin: 20px 20px 10px 30px;
+}
+
 .abb {
+  margin: auto;
   border-collapse: collapse;
   width: 600px;
   font-family: 'Roboto', Helvetica, sans-serif;
@@ -398,16 +415,19 @@ i {
   background-color: #000066;
   color: white;
 }
+
 .linear {
   width: 600px;
   border-collapse: collapse;
   font-family: 'Roboto', Helvetica, sans-serif;
   margin: auto;
 }
+
 .linear td, .linear th {
   border: 1px solid #000066;
   padding: 8px;
 }
+
 .linear th {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -415,6 +435,7 @@ i {
   background-color: #000066;
   color: white;
 }
+
 .container {
   display: grid;
   grid-template-columns: auto auto;
